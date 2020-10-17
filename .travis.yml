@@ -1,0 +1,6 @@
+# https://travis-ci.org/#!/phlax/bazeldev
+
+dist: bionic
+
+script:
+  - docker run --rm  l.gcr.io/google/bazel:latest --version
