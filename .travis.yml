@@ -4,14 +4,15 @@ dist: bionic
 
 script:
   - git clone https://github.com/phlax/envoy
-  - cd envoy
   - mkdir build_output
+  - mkdir cache
   - |
     docker run \
       -e USER="$(id -u)" \
       -u="$(id -u)" \
-      -v $(pwd):/src/workspace \
-      -v build_output:/tmp/build_output \
+      -v $(pwd)/envoy:/src/workspace \
+      -v $(pwd)/cache:/.cache \
+      -v $(pwd)/build_output:/tmp/build_output \
       -w /src/workspace \
       l.gcr.io/google/bazel:3.4.1 //examples/wasm
   - ls build_output
