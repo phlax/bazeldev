@@ -5,6 +5,7 @@ dist: bionic
 script:
   - git clone https://github.com/phlax/envoy
   - cd envoy
+  - mkdir build_output
   - |
     docker run \
       -e USER="$(id -u)" \
