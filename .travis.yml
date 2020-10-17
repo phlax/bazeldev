@@ -3,7 +3,7 @@
 dist: bionic
 
 script:
-  - git clone https://github.com:phlax/envoy
+  - git clone https://github.com/phlax/envoy
   - cd envoy
   - |
     docker run \
