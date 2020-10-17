@@ -13,5 +13,5 @@ script:
       -v $(pwd):/src/workspace \
       -v build_output:/tmp/build_output \
       -w /src/workspace \
-      l.gcr.io/google/bazel:latest //examples/wasm
+      l.gcr.io/google/bazel:3.4.1 //examples/wasm
   - ls build_output
