@@ -3,4 +3,14 @@
 dist: bionic
 
 script:
-  - docker run --rm  l.gcr.io/google/bazel:latest --version
+  - git clone https://github.com:phlax/envoy
+  - cd envoy
+  - |
+    docker run
+    -e USER="$(id -u)"
+    -u="$(id -u)"
+    -v $(pwd):/src/workspace
+    -v build_output:/tmp/build_output
+    -w /src/workspace
+    l.gcr.io/google/bazel:latest //examples/wasm
+  - ls build_output
