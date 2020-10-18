@@ -4,7 +4,6 @@ dist: bionic
 
 script:
   - git clone -b fix_wasm_example https://github.com/PiotrSikora/envoy
-  - cd envoy
   # - ./ci/run_envoy_docker.sh bazel build //examples/wasm:envoy_filter_http_wasm_example.wasm
   - mkdir build_output
   - mkdir cache
