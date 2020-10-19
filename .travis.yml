@@ -6,5 +6,5 @@ script:
   - git clone -b docs-add-wasm-sandbox-docs https://github.com/phlax/envoy
   - cd envoy/examples/wasm
   - docker-compose -f docker-compose-wasm.yaml up wasm_compile
-  - sudo ls -alh build
+  - sudo ls -alh wasm
   # - ./verify.sh
