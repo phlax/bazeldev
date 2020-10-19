@@ -3,17 +3,6 @@
 dist: bionic
 
 script:
-  - git clone -b fix_wasm_example https://github.com/PiotrSikora/envoy
-  # - ./ci/run_envoy_docker.sh bazel build //examples/wasm:envoy_filter_http_wasm_example.wasm
-  - mkdir build_output
-  - mkdir cache
-  - |
-    docker run \
-      -e USER="$(id -u)" \
-      -u="$(id -u)" \
-      -v $(pwd)/envoy:/src/workspace \
-      -v $(pwd)/cache:/.cache \
-      -v $(pwd)/build_output:/tmp/build_output \
-      -w /src/workspace \
-      l.gcr.io/google/bazel:3.4.1 build //examples/wasm:envoy_filter_http_wasm_example.wasm
-  - ls build_output
+  - git clone -b docs-add-wasm-sandbox-docs https://github.com/phlax/envoy
+  - cd envoy/examples/wasm
+  - ./verify.sh
